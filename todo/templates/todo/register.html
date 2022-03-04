@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>Register</h4>
+<form method="POST" action="">
+
+    {% csrf_token %}
+    {% for fields in form %}
+        <div class="input mb-3">
+            <span>
+                {{fields.label}} 
+            </span>
+            
+            {{fields}}
+
+            
+        </div>
+    {% endfor %}
+    
+
+    <input type="submit" name="create_user">
+    
+</form>
+<a href="/login/">Already have an account ?</a>
+
+{% endblock %}
